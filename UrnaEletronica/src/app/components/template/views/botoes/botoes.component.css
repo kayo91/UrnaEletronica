@@ -1,0 +1,30 @@
+.imagem {
+  text-align: center;
+}
+
+.botao0{
+  text-align: center;
+  margin-bottom: 20px;
+}
+.botao2{
+  text-align: center;
+  margin-bottom: 20px
+}
+
+.botaoNumerico{
+  font-size: 28px;
+}
+
+.botao3{
+  font-size: 18px;
+
+}
+
+.listaBotoes {
+  margin-top: 2rem;
+}
+
+.mat-raised-button {
+  margin-right: 20px;
+  height: 55px;
+}
