@@ -26,29 +26,28 @@
   <div class="imagem"><img src="../../../assets/img/eleitoral.png" alt="logo"></div>
   <div class="listaBotoes">
     <div class="botao0">
-      <button mat-raised-button class="botaoNumerico" color="primary">1</button>
-      <button mat-raised-button class="botaoNumerico" color="primary">2</button>
-      <button mat-raised-button class="botaoNumerico" color="primary">3</button>
+      <button (click)="clickSom()" mat-raised-button class="botaoNumerico" color="primary">1</button>
+      <button (click)="clickSom()" mat-raised-button class="botaoNumerico" color="primary">2</button>
+      <button (click)="clickSom()" mat-raised-button class="botaoNumerico" color="primary">3</button>
     </div>
     <div class="botao0">
-      <button mat-raised-button class="botaoNumerico" color="primary">4</button>
-      <button mat-raised-button class="botaoNumerico" color="primary">5</button>
-      <button mat-raised-button class="botaoNumerico" color="primary">6</button>
+      <button (click)="clickSom()" mat-raised-button class="botaoNumerico" color="primary">4</button>
+      <button (click)="clickSom()" mat-raised-button class="botaoNumerico" color="primary">5</button>
+      <button (click)="clickSom()" mat-raised-button class="botaoNumerico" color="primary">6</button>
     </div>
     <div class="botao0">
-      <button mat-raised-button class="botaoNumerico" color="primary">7</button>
-      <button mat-raised-button class="botaoNumerico" color="primary">8</button>
-      <button mat-raised-button class="botaoNumerico" color="primary">9</button>
+      <button (click)="clickSom()" mat-raised-button class="botaoNumerico" color="primary">7</button>
+      <button (click)="clickSom()" mat-raised-button class="botaoNumerico" color="primary">8</button>
+      <button (click)="clickSom()" mat-raised-button class="botaoNumerico" color="primary">9</button>
     </div>
     <div class="botao0">
-      <button mat-raised-button class="botaoNumerico" color="primary">0</button>
+      <button (click)="clickSom()" mat-raised-button class="botaoNumerico" color="primary">0</button>
     </div>
 
     <div class="botao2">
       <button (click)="branco()" mat-raised-button class="botao3" style="background-color: white;">BRANCO</button>
       <button (click)="corrige()" mat-raised-button class="botao3" style="background-color: orange;">CORRIGE</button>
       <button (click)="confirma()" mat-raised-button class="botao3" style="height: 73px; background-color: green;">CONFIRMA
-      <audio src="../../../assets/som/confirma.mp3"></audio>
       </button>
     </div>
   </div>

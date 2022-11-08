@@ -33,7 +33,17 @@ export class PainelComponent implements OnInit {
 
  }
 
- confirma(){
-  // this.audio = document.querySelector('audio')
+ clickSom(){
+  let audio = new Audio();
+  audio.src = "../../../assets/som/click.mp3";
+  audio.load();
+  audio.play();
  }
+
+ confirma(){
+    let audio = new Audio();
+    audio.src = "../../../assets/som/confirmar.mp3";
+    audio.load();
+    audio.play();
+  }
 }
