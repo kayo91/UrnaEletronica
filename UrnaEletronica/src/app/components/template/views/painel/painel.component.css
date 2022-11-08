@@ -1,3 +1,25 @@
+.painel {
+  width: 56%;
+  height: 516px;
+  border: 2px solid rgb(139, 139, 137);
+  margin-left: 2rem;
+  background-color: #fff;
+  margin-top: 2rem;
+  /* display: inline-block; */
+}
+.botoes{
+  float: right;
+  width: 35%;
+  height: 565px;
+  border: 2px solid rgb(139, 139, 137);
+  margin-left: 3rem;
+  background-color: rgb(65, 63, 63);
+  margin-top: -34rem;
+  margin-right: 1rem;
+  /* background-color: #fff; */
+}
+
+
 #cabecalho {
   margin-top: 1rem;
   margin-left: 1rem;
@@ -36,15 +58,39 @@
   margin-left: 0.2rem;
 }
 
-/* .botoes{
-  float: right;
-  width: 10%;
-  height: 10%;
-  margin-bottom: 2rem;
-  border: 2px solid rgb(139, 139, 137);
-  margin-left: 3rem;
-  background-color: #fff;
-} */
+.imagem {
+  text-align: center;
+}
+
+.botao0{
+  text-align: center;
+  margin-bottom: 20px;
+}
+.botao2{
+  text-align: center;
+  /* margin-bottom: 20px */
+  margin-left: 1rem;
+}
+
+.botaoNumerico{
+  font-size: 28px;
+  background-color: black;
+}
+
+.botao3{
+  font-size: 18px;
+}
+
+
+.listaBotoes {
+  margin-top: 2rem;
+}
+
+.mat-raised-button {
+  margin-right: 20px;
+  height: 55px;
+}
+
 
 
 

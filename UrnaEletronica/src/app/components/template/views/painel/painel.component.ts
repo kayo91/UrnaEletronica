@@ -25,8 +25,15 @@ export class PainelComponent implements OnInit {
 
   }
 
-  // teste (){
-  //   if (this.candidato)
-  // }
+ branco(){
 
+ }
+
+ corrige(){
+
+ }
+
+ confirma(){
+  // this.audio = document.querySelector('audio')
+ }
 }

@@ -10,7 +10,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { UrnaComponent } from './components/template/views/urna/urna.component';
 import {MatCardModule} from '@angular/material/card';
 import { PainelComponent } from './components/template/views/painel/painel.component';
-import { BotoesComponent } from './components/template/views/botoes/botoes.component';
 import {MatButtonModule} from '@angular/material/button';
 
 
@@ -21,8 +20,6 @@ import {MatButtonModule} from '@angular/material/button';
     FooterComponent,
     UrnaComponent,
     PainelComponent,
-    BotoesComponent,
-
   ],
   imports: [
     BrowserModule,

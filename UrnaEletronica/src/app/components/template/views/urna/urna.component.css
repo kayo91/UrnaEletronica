@@ -3,32 +3,11 @@
 }
 
 .principal {
-    width: 80%;
-    height: 90%;
+    width: 95%;
+    height: 95%;
     margin-left: auto;
     margin-right: auto;
     border: 3px solid rgb(139, 139, 137);
     background-color: rgb(224, 224, 209);
 
-}
-
-.painel {
-  width: 50%;
-  height: 80%;
-  border: 2px solid rgb(139, 139, 137);
-  margin-left: 3rem;
-  background-color: #fff;
-  /* display: inline-block; */
-}
-
-.botoes{
-  float: right;
-  width: 43%;
-  height: 83%;
-  border: 2px solid rgb(139, 139, 137);
-  margin-left: 3rem;
-  background-color: rgb(65, 63, 63);
-  margin-top: -500px;
-  margin-right: 10px;
-  /* background-color: #fff; */
 }
