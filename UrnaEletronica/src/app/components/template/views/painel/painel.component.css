@@ -1,3 +1,10 @@
+@keyframes pisca {
+  0% { opacity: 0.2; }
+  50% { opacity: 1.0; }
+  100% { opacity: 0.2; }
+}
+
+
 .painel {
   width: 56%;
   height: 516px;
@@ -89,6 +96,26 @@
 .mat-raised-button {
   margin-right: 20px;
   height: 55px;
+}
+
+.pisca {
+  animation-name: pisca;
+  animation-duration: 1.2s;
+  animation-iteration-count: infinite;
+}
+
+/* .numero {
+  display: inline-block;
+  width: 30px;
+  height: 40px;
+  border: 1px solid #000;
+  text-align: center;
+  line-height: 40px;
+  font-size: 25px;
+  margin-right: 3px;
+} */
+.d1-3 {
+  height: 50px;
 }
 
 

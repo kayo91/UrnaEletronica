@@ -13,11 +13,11 @@
   </div>
 
   <div class="numeros">
-    <span *ngIf="true" id="numero1" ><input class="input" maxlength="1"></span>
-    <span *ngIf="true" id="numero2" ><input class="input" maxlength="1"></span>
-    <span *ngIf="true" id="numero3" ><input class="input" maxlength="1"></span>
-    <span *ngIf="true" id="numero4" ><input class="input" maxlength="1"></span>
-    <span *ngIf="false"id="numero5" ><input class="input" maxlength="1"></span>
+    <span *ngIf="true" id="numero1" ><input [value]="numero" class="input pisca" maxlength="1"></span>
+    <!-- <span *ngIf=" " id="numero2" ><input [value]="numero" class="input pisca" maxlength="1"></span>
+    <span *ngIf="true" id="numero3" ><input [value]="numero" class="input" maxlength="1"></span>
+    <span *ngIf="true" id="numero4" ><input [value]="gravarNumero4" class="input" maxlength="1"></span>
+    <span *ngIf="false"id="numero5" ><input [value]="gravarNumero2" class="input" maxlength="1"></span> -->
   </div>
 </div>
 </div>
@@ -26,9 +26,9 @@
   <div class="imagem"><img src="../../../assets/img/eleitoral.png" alt="logo"></div>
   <div class="listaBotoes">
     <div class="botao0">
-      <button (click)="clickSom()" mat-raised-button class="botaoNumerico" color="primary">1</button>
-      <button (click)="clickSom()" mat-raised-button class="botaoNumerico" color="primary">2</button>
-      <button (click)="clickSom()" mat-raised-button class="botaoNumerico" color="primary">3</button>
+      <button (click)="listaNumeros('1')" mat-raised-button class="botaoNumerico" color="primary">1</button>
+      <button (click)="listaNumeros('2')" mat-raised-button class="botaoNumerico" color="primary">2</button>
+      <button (click)="listaNumeros('3')" mat-raised-button class="botaoNumerico" color="primary">3</button>
     </div>
     <div class="botao0">
       <button (click)="clickSom()" mat-raised-button class="botaoNumerico" color="primary">4</button>
