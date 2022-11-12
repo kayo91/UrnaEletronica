@@ -9,8 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PainelComponent implements OnInit {
 
+  teste1:  boolean = true;
+  deputadoFederal: boolean = true;
+  cargoDeputadoFederal = 'Deputado Federal'
+  cargoDeputadoEstadual = 'Deputado Estadual'
+  cargoSenador = 'Senador'
+  cargoPresidente ='Presidente'
+  federal = 5;
+  elNumero: string = '';
+  numero: string[] = [];
+  // novoArray = new Array();
 
-  numero = '';
+testee1: string = ''
+testee2: string = '';
+testee3: string = '';
   // numeros = document.querySelector('.d1-3');
   etapaAtual = 0;
 
@@ -30,10 +42,39 @@ export class PainelComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
+    this.teste()
+    // this.verificacao()
   }
 
 
+  teste() {
+  if (this.teste1 && this.deputadoFederal) {
+    for(let i=0; i < this.federal; i++) {
+       this.deputadoFederal = true
+      console.log("verdadeiro" + this.deputadoFederal)
+ }
+  this.deputadoFederal = false
+  console.log("fora" + this.deputadoFederal)
+}
+// return this.teste2()
+}
+
+verificacao() { // função para  capturar o elNumero e armazenar em um array
+console.log('função verificação' + this.elNumero)
+this.numero.unshift(this.elNumero[0])
+// this.numero.unshift(this.elNumero[1])
+// this.numero.unshift(this.elNumero[2])
+console.log(this.numero) // está dentro do meu array
+
+this.testee1 = this.numero[0];
+this.testee2 = this.numero[1];
+this.testee3 = this.numero[2];
+
+// this.numero[0] = this.testee1
+// this.numero[1] = this.testee2
+// this.numero[2] = this.testee3
+
+}
 
 listaNumeros(n: string){
   let audio = new Audio();
@@ -42,17 +83,15 @@ listaNumeros(n: string){
   audio.play();
 
   let numeros = document.querySelector('.input.pisca');
-
+  console.log('fora do if' + n)
   if(numeros !== null) {
     numeros.innerHTML = n;
-    this.numero = `${this.numero}${n}`;
-
+    this.elNumero = `${this.elNumero}${n}`;
     numeros.classList.remove('pisca');
-
     if(numeros.nextElementSibling != null) {
       numeros.nextElementSibling.classList.add('pisca');
     } else {
-      // atualizaInterface();
+      this.verificacao()
     }
   }
 
@@ -65,41 +104,6 @@ listaNumeros(n: string){
 corrige(){
 
 }
-
-
-
-//  listaNumeros(numero: string): void{
-//  if (numero === '1') {
-//   this.gravarNumero1 = '1'
-//  }
-//  if (numero == '2') {
-//   this.gravarNumero2 = '2'
-//  }
-//  if (numero == '3') {
-//   this.gravarNumero3 = '3'
-//  }
-//  if (numero == '4') {
-//   this.gravarNumero4 = '4'
-//  }
-//  if (numero == '5') {
-//   this.gravarNumero5 = '5'
-//  }
-//  if (numero == '6') {
-//   this.gravarNumero6 = '6'
-//  }
-//  if (numero == '7') {
-//   this.gravarNumero7 = '7'
-//  }
-//  if (numero == '8') {
-//   this.gravarNumero8 = '8'
-//  }
-//  if (numero == '9') {
-//   this.gravarNumero9 = '9'
-//  }
-//  if (numero == '0') {
-//   this.gravarNumero0 = '0'
-//  }
-//  }
 
 
  clickSom(){

@@ -6,18 +6,16 @@
   </div>
 
   <div id="cargo">
-    <span *ngIf="true">Deputada(o) Federal</span>
-    <span *ngIf="false">Deputada(o) Estadual</span>
-    <span *ngIf="false">Senadora(or)</span>
-    <span *ngIf="false">Presidenta(e)</span>
+    <span *ngIf="true">{{cargoDeputadoFederal}}</span>
+    <span *ngIf="false">{{cargoDeputadoEstadual}}</span>
+    <span *ngIf="false">{{cargoSenador}}</span>
+    <span *ngIf="false">{{cargoPresidente}}</span>
   </div>
 
-  <div class="numeros">
-    <span *ngIf="true" id="numero1" ><input [value]="numero" class="input pisca" maxlength="1"></span>
-    <!-- <span *ngIf=" " id="numero2" ><input [value]="numero" class="input pisca" maxlength="1"></span>
-    <span *ngIf="true" id="numero3" ><input [value]="numero" class="input" maxlength="1"></span>
-    <span *ngIf="true" id="numero4" ><input [value]="gravarNumero4" class="input" maxlength="1"></span>
-    <span *ngIf="false"id="numero5" ><input [value]="gravarNumero2" class="input" maxlength="1"></span> -->
+  <div *ngIf="!deputadoFederal" class="numeros">
+    <span *ngIf="true" id="numero1" ><input [value]="testee3" class="input pisca" maxlength="1"></span>
+    <span *ngIf="true" id="numero1" ><input [value]="testee2" class="input pisca" maxlength="1"></span>
+    <span *ngIf="true" id="numero1" ><input [value]="testee1" class="input pisca" maxlength="1"></span>
   </div>
 </div>
 </div>
