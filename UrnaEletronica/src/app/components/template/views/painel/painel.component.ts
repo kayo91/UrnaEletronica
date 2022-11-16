@@ -18,23 +18,26 @@ export class PainelComponent implements OnInit {
   federal = 5;
   elNumero: string = '';
   numero: string[] = [];
-  // novoArray = new Array();
 
-testee1: string = ''
-testee2: string = '';
-testee3: string = '';
-  // numeros = document.querySelector('.d1-3');
+// testee1: string = '';
+// testee2: string = '';
+// testee3: string = '';
+// testee4: string = '';
+// testee5: string = '';
+
+foto: boolean = false;
+
+
   etapaAtual = 0;
 
 
   candidato: Urna = {
-    cargo: '',
-    nomeCandidato: '',
-    numeroCandidato: 0,
+    cargo: 'Stark',
+    nomeCandidato: 'Ned Stark',
+    numeroCandidato: ['5', '4','3','2','1']
   }
 
   cargo2 = ['Deputado Federal', 'Deputado Estadual', 'Senador', 'Presidente' ]
-  // candiNumero = [7212]
   Route: any;
 
 
@@ -42,12 +45,11 @@ testee3: string = '';
   ) { }
 
   ngOnInit(): void {
-    this.teste()
-    // this.verificacao()
+    // this.teste()
   }
 
 
-  teste() {
+  teste(){
   if (this.teste1 && this.deputadoFederal) {
     for(let i=0; i < this.federal; i++) {
        this.deputadoFederal = true
@@ -59,23 +61,6 @@ testee3: string = '';
 // return this.teste2()
 }
 
-verificacao() { // função para  capturar o elNumero e armazenar em um array
-console.log('função verificação' + this.elNumero)
-this.numero.unshift(this.elNumero[0])
-// this.numero.unshift(this.elNumero[1])
-// this.numero.unshift(this.elNumero[2])
-console.log(this.numero) // está dentro do meu array
-
-this.testee1 = this.numero[0];
-this.testee2 = this.numero[1];
-this.testee3 = this.numero[2];
-
-// this.numero[0] = this.testee1
-// this.numero[1] = this.testee2
-// this.numero[2] = this.testee3
-
-}
-
 listaNumeros(n: string){
   let audio = new Audio();
   audio.src = "../../../assets/som/click.mp3";
@@ -83,18 +68,40 @@ listaNumeros(n: string){
   audio.play();
 
   let numeros = document.querySelector('.input.pisca');
-  console.log('fora do if' + n)
-  if(numeros !== null) {
+
+  if(numeros !== null){
     numeros.innerHTML = n;
-    this.elNumero = `${this.elNumero}${n}`;
+    this.elNumero = n;
+    this.numero.unshift(this.elNumero[0])
+    // this.testee1 = this.numero[4];
+    // this.testee2 = this.numero[3];
+    // this.testee3 = this.numero[2];
+    // this.testee4 = this.numero[1];
+    // this.testee5 = this.numero[0];
+
+
     numeros.classList.remove('pisca');
     if(numeros.nextElementSibling != null) {
       numeros.nextElementSibling.classList.add('pisca');
-    } else {
-      this.verificacao()
     }
+    else {
+      console.log(this.numero) // está dentro do meu array
+    }
+    this.valida()
   }
+ }
 
+ // Função para comparar 2 arrays
+ valida(){
+  let i = this.numero.length;
+    if (i != this.candidato.numeroCandidato.length)return false;
+    while (i--) {
+      if (this.numero[i] !== this.candidato.numeroCandidato[i])  // retorna quando o array digitado  é falso
+      return false;
+    }
+    // Quando os arrays forem iguais
+    this.foto = true // enquanto for verdadeiro vai retorna a foto
+    return true;
  }
 
  branco(){
@@ -102,21 +109,15 @@ listaNumeros(n: string){
 }
 
 corrige(){
-
 }
 
-
- clickSom(){
-  let audio = new Audio();
-  audio.src = "../../../assets/som/click.mp3";
-  audio.load();
-  audio.play();
- }
-
  confirma(){
+   if(this.foto){
     let audio = new Audio();
     audio.src = "../../../assets/som/confirmar.mp3";
     audio.load();
     audio.play();
+   }
+
   }
 }

@@ -12,11 +12,31 @@
     <span *ngIf="false">{{cargoPresidente}}</span>
   </div>
 
-  <div *ngIf="!deputadoFederal" class="numeros">
-    <span *ngIf="true" id="numero1" ><input [value]="testee3" class="input pisca" maxlength="1"></span>
-    <span *ngIf="true" id="numero1" ><input [value]="testee2" class="input pisca" maxlength="1"></span>
-    <span *ngIf="true" id="numero1" ><input [value]="testee1" class="input pisca" maxlength="1"></span>
+  <div>
+
+  <div *ngIf="foto">
+  <div><img class="imagens" src="../../../assets/img/ned.png"></div>
   </div>
+  <div *ngIf="deputadoFederal" class="numeros">
+      <span class="input pisca"></span>
+      <span class="input pisca"></span>
+      <span class="input pisca"></span>
+      <span class="input pisca"></span>
+      <span class="input pisca"></span>
+  </div>
+</div>
+<div *ngIf="foto" class="partido">
+  <p>{{'Nome: ' + this.candidato.nomeCandidato}}</p>
+  <p>{{'Partido: ' + this.candidato.cargo}}</p>
+</div>
+
+</div>
+
+<div class="rodape" *ngIf="foto">
+  <hr>
+  <p>Aperte a tecla:</p>
+  <p>CONFIRMA para CONFIRMAR este voto</p>
+  <p>CORRIGE para REINICIAR este voto</p>
 </div>
 </div>
 
@@ -29,17 +49,17 @@
       <button (click)="listaNumeros('3')" mat-raised-button class="botaoNumerico" color="primary">3</button>
     </div>
     <div class="botao0">
-      <button (click)="clickSom()" mat-raised-button class="botaoNumerico" color="primary">4</button>
-      <button (click)="clickSom()" mat-raised-button class="botaoNumerico" color="primary">5</button>
-      <button (click)="clickSom()" mat-raised-button class="botaoNumerico" color="primary">6</button>
+      <button (click)="listaNumeros('4')" mat-raised-button class="botaoNumerico" color="primary">4</button>
+      <button (click)="listaNumeros('5')" mat-raised-button class="botaoNumerico" color="primary">5</button>
+      <button (click)="listaNumeros('6')" mat-raised-button class="botaoNumerico" color="primary">6</button>
     </div>
     <div class="botao0">
-      <button (click)="clickSom()" mat-raised-button class="botaoNumerico" color="primary">7</button>
-      <button (click)="clickSom()" mat-raised-button class="botaoNumerico" color="primary">8</button>
-      <button (click)="clickSom()" mat-raised-button class="botaoNumerico" color="primary">9</button>
+      <button (click)="listaNumeros('7')" mat-raised-button class="botaoNumerico" color="primary">7</button>
+      <button (click)="listaNumeros('8')" mat-raised-button class="botaoNumerico" color="primary">8</button>
+      <button (click)="listaNumeros('9')" mat-raised-button class="botaoNumerico" color="primary">9</button>
     </div>
     <div class="botao0">
-      <button (click)="clickSom()" mat-raised-button class="botaoNumerico" color="primary">0</button>
+      <button (click)="listaNumeros('0')" mat-raised-button class="botaoNumerico" color="primary">0</button>
     </div>
 
     <div class="botao2">

@@ -11,6 +11,8 @@ import { UrnaComponent } from './components/template/views/urna/urna.component';
 import {MatCardModule} from '@angular/material/card';
 import { PainelComponent } from './components/template/views/painel/painel.component';
 import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import {MatButtonModule} from '@angular/material/button';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatInputModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
