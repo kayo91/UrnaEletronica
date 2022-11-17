@@ -1,5 +1,5 @@
 import { PainelService } from './painel.service';
-
+import { ActivatedRoute, Router } from '@angular/router';
 import { Urna } from './painel.model';
 import { Component, OnInit } from '@angular/core';
 
@@ -22,11 +22,6 @@ export class PainelComponent implements OnInit {
   elNumero: string = '';
   numero: string[] = [];
 
-// testee1: string = '';
-// testee2: string = '';
-// testee3: string = '';
-// testee4: string = '';
-// testee5: string = '';
 
 foto: boolean = false;
 
@@ -44,15 +39,29 @@ foto: boolean = false;
 
 
 
-  constructor(private painelService: PainelService) {}
+
+  constructor(
+    private painelService: PainelService,
+    private router: Router,
+    private Route: ActivatedRoute ) {}
 
   ngOnInit(): void {
     this.painelService.ler().subscribe(urna => {  // vai fazer uma requisição do tipo get no backend
     this.urna = urna
-    console.log(urna)
+    // console.log(urna)
+    this.novoTeste()
     })
   }
 
+
+  novoTeste(){
+    // this.urna.forEach(function(urnaCandidato) {
+    //   console.log(urnaCandidato.numeroCandidato)
+    //   urnaCandidato.numeroCandidato
+
+    // })
+    console.log("aqui" + this.urna)
+  }
 
   teste(){
   if (this.teste1 && this.deputadoFederal) {
@@ -78,12 +87,6 @@ listaNumeros(n: string){
     numeros.innerHTML = n;
     this.elNumero = n;
     this.numero.unshift(this.elNumero[0])
-    // this.testee1 = this.numero[4];
-    // this.testee2 = this.numero[3];
-    // this.testee3 = this.numero[2];
-    // this.testee4 = this.numero[1];
-    // this.testee5 = this.numero[0];
-
 
     numeros.classList.remove('pisca');
     if(numeros.nextElementSibling != null) {
@@ -93,10 +96,11 @@ listaNumeros(n: string){
       console.log(this.numero) // está dentro do meu array
     }
     this.valida()
+    // this.novoTeste
   }
  }
 
- // Função para comparar 2 arrays
+// Função para comparar 2 arrays
  valida(){
   let i = this.numero.length;
     if (i != this.candidato.numeroCandidato.length)return false;
@@ -114,6 +118,7 @@ listaNumeros(n: string){
 }
 
 corrige(){
+  location.reload();
 }
 
  confirma(){
