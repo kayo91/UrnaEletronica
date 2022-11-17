@@ -1,3 +1,4 @@
+import { PainelService } from './painel.service';
 
 import { Urna } from './painel.model';
 import { Component, OnInit } from '@angular/core';
@@ -8,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./painel.component.css']
 })
 export class PainelComponent implements OnInit {
+
+ urna!: Urna[]
 
   teste1:  boolean = true;
   deputadoFederal: boolean = true;
@@ -34,18 +37,20 @@ foto: boolean = false;
   candidato: Urna = {
     cargo: 'Stark',
     nomeCandidato: 'Ned Stark',
-    numeroCandidato: ['5', '4','3','2','1']
+    numeroCandidato: ['5', '4', '3', '2', '1'],
   }
 
   cargo2 = ['Deputado Federal', 'Deputado Estadual', 'Senador', 'Presidente' ]
-  Route: any;
 
 
-  constructor(
-  ) { }
+
+  constructor(private painelService: PainelService) {}
 
   ngOnInit(): void {
-    // this.teste()
+    this.painelService.ler().subscribe(urna => {  // vai fazer uma requisição do tipo get no backend
+    this.urna = urna
+    console.log(urna)
+    })
   }
 
 

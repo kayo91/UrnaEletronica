@@ -1,34 +1,17 @@
 {
-  "Urna": [
-    {
-      "id": 1,
-      "cargo": "Deputado Federal",
-      "nomeCandidato": "kayo",
-      "numeroCandidato": 10
-    },
-    {
-      "id": 2,
-      "cargo": "Deputado Estadual",
-      "nomeCandidato": "Ragnar",
-      "numeroCandidato": 12
-    },
-    {
-      "id": 3,
-      "cargo": "Senador",
-      "nomeCandidato": "Cido",
-      "numeroCandidato": 25
-    },
-    {
-      "id": 4,
-      "cargo": "Governador",
-      "nomeCandidato": "kayo",
-      "numeroCandidato": 10
-    },
-    {
-      "id": 5,
-      "cargo": "Presidente",
-      "nomeCandidato": "kayo",
-      "numeroCandidato": 10
-    }
-  ]
-}
+    "urna": [
+      {
+        "id": 1,
+        "cargo": "Stark",
+        "nomeCandidato": "Ned Stark",
+        "numeroCandidato":["5", "4", "3", "2", "1"]
+      },
+      {
+        "id": 2,
+        "cargo": "Casa Targaryen",
+        "nomeCandidato": "Daenerys Targaryen",
+        "numeroCandidato": ["6", "5", "4", "3", "2"]
+      } 
+    ]
+  }
+  

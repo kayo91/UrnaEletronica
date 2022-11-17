@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PainelService } from '../painel/painel.service';
 
 @Component({
   selector: 'app-urna',

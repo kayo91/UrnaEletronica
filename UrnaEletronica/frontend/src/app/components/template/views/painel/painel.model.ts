@@ -3,4 +3,5 @@ export interface Urna {
   cargo:string;
   nomeCandidato: String;
   numeroCandidato: string[];
+  // imagem: {url: string}
 }
