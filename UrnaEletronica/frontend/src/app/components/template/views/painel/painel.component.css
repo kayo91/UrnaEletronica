@@ -55,11 +55,15 @@
 .partido{
   font-size: 18px;
   margin-top: 2rem;
-  margin-left: 4rem;
+  margin-left: 3rem;
 }
 
 .rodape{
-  margin-top: 8rem;
+  margin-top: 7rem;
+}
+
+.rodape2{
+  margin-left: 1rem;
 }
 
 hr {

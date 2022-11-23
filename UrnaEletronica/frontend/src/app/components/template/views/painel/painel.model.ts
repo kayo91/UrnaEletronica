@@ -1,7 +1,7 @@
 export interface Urna {
   id?: number;
-  cargo:string;
+  partido: string;
   nomeCandidato: String;
   numeroCandidato: string[];
-  // imagem: {url: string}
+  foto: String;
 }

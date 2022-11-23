@@ -2,16 +2,19 @@
     "urna": [
       {
         "id": 1,
-        "cargo": "Stark",
+        "partido": "Stark",
         "nomeCandidato": "Ned Stark",
+        "foto": "../../../assets/img/ned.png",
         "numeroCandidato":["5", "4", "3", "2", "1"]
       },
       {
         "id": 2,
-        "cargo": "Casa Targaryen",
+        "partido": "Casa Targaryen",
         "nomeCandidato": "Daenerys Targaryen",
+        "foto": "../../../assets/img/daenerys.png",
         "numeroCandidato": ["6", "5", "4", "3", "2"]
-      } 
+      }
+
     ]
   }
   

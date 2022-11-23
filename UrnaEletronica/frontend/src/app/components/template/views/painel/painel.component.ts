@@ -12,6 +12,9 @@ export class PainelComponent implements OnInit {
 
  urna!: Urna[]
 
+  nomeCand: string = '';
+  nomePart: string = '';
+
   teste1:  boolean = true;
   deputadoFederal: boolean = true;
   cargoDeputadoFederal = 'Deputado Federal'
@@ -22,48 +25,61 @@ export class PainelComponent implements OnInit {
   elNumero: string = '';
   numero: string[] = [];
 
+  validaNumero: boolean = false;
+  votoNulo: boolean = false;
 
-foto: boolean = false;
+
+  foto: boolean = false;
 
 
   etapaAtual = 0;
 
+  gravarNumero!: string[];
 
-  candidato: Urna = {
-    cargo: 'Stark',
-    nomeCandidato: 'Ned Stark',
-    numeroCandidato: ['5', '4', '3', '2', '1'],
-  }
+
 
   cargo2 = ['Deputado Federal', 'Deputado Estadual', 'Senador', 'Presidente' ]
 
+ nomeCandidato: String = ''
+ partidoCandidato: String = ''
+ imagem: String = ''
 
 
 
   constructor(
     private painelService: PainelService,
     private router: Router,
-    private Route: ActivatedRoute ) {}
+    private route: ActivatedRoute ) {}
 
   ngOnInit(): void {
     this.painelService.ler().subscribe(urna => {  // vai fazer uma requisição do tipo get no backend
-    this.urna = urna
-    // console.log(urna)
-    this.novoTeste()
+    this.urna = urna // this.urna é meu obj
     })
   }
 
-
-  novoTeste(){
-    // this.urna.forEach(function(urnaCandidato) {
-    //   console.log(urnaCandidato.numeroCandidato)
-    //   urnaCandidato.numeroCandidato
-
-    // })
-    console.log("aqui" + this.urna)
+  validaArray() {
+    console.log("valida" + this.numero)
+    // let i = this.numero.length;
+       this.urna.forEach((urnaCandidato) => {
+        let i = this.numero.length;
+        if (i != urnaCandidato.numeroCandidato.length)
+        return false; { // retorna quando o array digitado  é falso
+          this.votoNulo = true
+        while (i--) {
+          if(this.numero[i] !== urnaCandidato.numeroCandidato[i])
+            return false;
+        }
+        this.validaNumero = true
+        this.gravarNumero = urnaCandidato.numeroCandidato
+        this.nomeCandidato = urnaCandidato.nomeCandidato
+        this.partidoCandidato = urnaCandidato.partido
+        this.imagem = urnaCandidato.foto
+        return true;
+       }
+    })
   }
 
-  teste(){
+  teste(){ // trava
   if (this.teste1 && this.deputadoFederal) {
     for(let i=0; i < this.federal; i++) {
        this.deputadoFederal = true
@@ -95,26 +111,11 @@ listaNumeros(n: string){
     else {
       console.log(this.numero) // está dentro do meu array
     }
-    this.valida()
-    // this.novoTeste
+    this.validaArray()
   }
  }
 
-// Função para comparar 2 arrays
- valida(){
-  let i = this.numero.length;
-    if (i != this.candidato.numeroCandidato.length)return false;
-    while (i--) {
-      if (this.numero[i] !== this.candidato.numeroCandidato[i])  // retorna quando o array digitado  é falso
-      return false;
-    }
-    // Quando os arrays forem iguais
-    this.foto = true // enquanto for verdadeiro vai retorna a foto
-    return true;
- }
-
  branco(){
-
 }
 
 corrige(){
@@ -122,7 +123,7 @@ corrige(){
 }
 
  confirma(){
-   if(this.foto){
+   if(this.validaNumero){
     let audio = new Audio();
     audio.src = "../../../assets/som/confirmar.mp3";
     audio.load();

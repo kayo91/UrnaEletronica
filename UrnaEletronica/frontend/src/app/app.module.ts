@@ -16,6 +16,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { registerLocaleData } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import localePt from '@angular/common/locales/pt';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 
@@ -38,7 +39,8 @@ registerLocaleData(localePt);
     MatButtonModule,
     MatInputModule,
     MatFormFieldModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSnackBarModule
   ],
   providers: [{
     provide: LOCALE_ID,
