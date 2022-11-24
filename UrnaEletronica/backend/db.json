@@ -1,18 +1,164 @@
 {
-    "urna": [
+  "urna": [
       {
         "id": 1,
-        "partido": "Stark",
-        "nomeCandidato": "Ned Stark",
-        "foto": "../../../assets/img/ned.png",
-        "numeroCandidato":["5", "4", "3", "2", "1"]
+        "cargo": "Presidente",
+        "partido": "Casa Lannister",
+        "nomeCandidato": "Cersei Lannister",
+        "foto": "../../../assets/img/cersei.png",
+        "numeroCandidato":["5", "4"]
       },
       {
         "id": 2,
+        "cargo": "Presidente",
         "partido": "Casa Targaryen",
         "nomeCandidato": "Daenerys Targaryen",
         "foto": "../../../assets/img/daenerys.png",
-        "numeroCandidato": ["6", "5", "4", "3", "2"]
+        "numeroCandidato": ["6", "5"]
+      },
+      {
+        "id": 3,
+        "cargo": "Presidente",
+        "partido": "Casa Baratheon",
+        "nomeCandidato": "Stannis Baratheon",
+        "foto": "../../../assets/img/stannis.png",
+        "numeroCandidato": ["6", "2"]
+      },
+      {
+        "id": 4,
+        "cargo": "Presidente",
+        "partido": "Casa Baratheon",
+        "nomeCandidato": "Joffrey Baratheon",
+        "foto": "../../../assets/img/joffrey.png",
+        "numeroCandidato": ["3", "2"]
+      },
+      {
+        "id": 5,
+        "cargo": "Senador",
+        "partido": "Casa Lannister",
+        "nomeCandidato": "Tywin Lannister",
+        "foto": "../../../assets/img/tywin.png",
+        "numeroCandidato": ["4", "3", "2"]
+      },
+      {
+        "id": 6,
+        "cargo": "Senador",
+        "partido": "Casa Baelish",
+        "nomeCandidato": "Petyr Baelish",
+        "foto": "../../../assets/img/mindinho.png",
+        "numeroCandidato": ["6", "3", "2"]
+      },
+      {
+        "id": 7,
+        "cargo": "Senador",
+        "partido": "Casa Lannister",
+        "nomeCandidato": "Tyrion Lannister",
+        "foto": "../../../assets/img/mindinho.png",
+        "numeroCandidato": ["9", "7", "7"]
+      },
+      {
+        "id": 8,
+        "cargo": "Deputado Estadual",
+        "partido": "Casa Frey",
+        "nomeCandidato": "Walder Frey",
+        "foto": "../../../assets/img/walderfrey.png",
+        "numeroCandidato":["9", "4", "5", "2", "1"]
+      },
+      {
+        "id": 9,
+        "cargo": "Deputado Estadual",
+        "partido": "Casa Stark",
+        "nomeCandidato": "jon Snow",
+        "foto": "../../../assets/img/jon.png",
+        "numeroCandidato":["5", "4", "3", "2", "1"]
+      },
+      {
+        "id": 10,
+        "cargo": "Deputado Estadual",
+        "partido": "Casa Bolton",
+        "nomeCandidato": "Ramsay Bolton",
+        "foto": "../../../assets/img/ramsay.png",
+        "numeroCandidato":["5", "6", "7", "8", "9"]
+      },
+      {
+        "id": 11,
+        "cargo": "Deputado Estadual",
+        "partido": "Casa Stark",
+        "nomeCandidato": "Arya Stark",
+        "foto": "../../../assets/img/arya.png",
+        "numeroCandidato":["7", "6", "5", "4", "3"]
+      },
+      {
+        "id": 12,
+        "cargo": "Deputado Estadual",
+        "partido": "Casa Greyjoy",
+        "nomeCandidato": "Theon Greyjoy",
+        "foto": "../../../assets/img/theon.png",
+        "numeroCandidato":["5", "2", "3", "8", "1"]
+      },
+      {
+        "id": 13,
+        "cargo": "Deputado Estadual",
+        "partido": "Casa Mormont",
+        "nomeCandidato": "Lyanna Mormont",
+        "foto": "../../../assets/img/lyanna.png",
+        "numeroCandidato":["1", "6", "2", "1", "1"]
+      },
+      {
+        "id": 14,
+        "cargo": "Deputado Federal",
+        "partido": "Casa Stark",
+        "nomeCandidato": "Ned Stark",
+        "foto": "../../../assets/img/ned.png",
+        "numeroCandidato":["4", "3", "2", "1"]
+      },
+      {
+        "id": 15,
+        "cargo": "Deputado Federal",
+        "partido": "Casa Lannister",
+        "nomeCandidato": "Jaime Lannister",
+        "foto": "../../../assets/img/jaime.png",
+        "numeroCandidato":["5", "4", "3", "4"]
+      },
+      {
+        "id": 16,
+        "cargo": "Deputado Federal",
+        "partido": "A Sacerdotisa Vermelha",
+        "nomeCandidato": "Melisandre",
+        "foto": "../../../assets/img/melisandre.png",
+        "numeroCandidato":["3", "2", "1", "9"]
+      },
+      {
+        "id": 17,
+        "cargo": "Deputado Federal",
+        "partido": "Casa Tyrell",
+        "nomeCandidato": "Olenna Tyrell",
+        "foto": "../../../assets/img/olennaTyrell.png",
+        "numeroCandidato":["3", "2", "1", "3"]
+      },
+      {
+        "id": 18,
+        "cargo": "Deputado Federal",
+        "partido": "Casa Stark",
+        "nomeCandidato": "Rob Stark",
+        "foto": "../../../assets/img/rob.png",
+        "numeroCandidato":["3", "5", "1","3"]
+      },
+      {
+        "id": 19,
+        "cargo": "Deputado Federal",
+        "partido": "Norte da Muralha",
+        "nomeCandidato": "Rei da Noite",
+        "foto": "../../../assets/img/reidanoite.png",
+        "numeroCandidato":["5", "5", "6","6"]
+      },
+      {
+        "id": 20,
+        "cargo": "Deputado Federal",
+        "partido": "Casa Stark",
+        "nomeCandidato": "Sansa Stark",
+        "foto": "../../../assets/img/sansa.png",
+        "numeroCandidato":["3", "1", "1","5"]
       }
 
     ]
