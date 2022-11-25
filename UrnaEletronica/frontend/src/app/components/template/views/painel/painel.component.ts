@@ -17,10 +17,10 @@ export class PainelComponent implements OnInit {
 
   teste1:  boolean = true;
   deputadoFederal: boolean = true;
-  cargoDeputadoFederal = 'Deputado Federal'
-  cargoDeputadoEstadual = 'Deputado Estadual'
-  cargoSenador = 'Senador'
-  cargoPresidente ='Presidente'
+  cargoDeputadoFederal: boolean = true;
+  cargoDeputadoEstadual: boolean = false;
+  cargoSenador: boolean = false;
+  cargoPresidente: boolean = false;
   federal = 5;
   elNumero: string = '';
   numero: string[] = [];
@@ -79,17 +79,17 @@ export class PainelComponent implements OnInit {
     })
   }
 
-  teste(){ // trava
-  if (this.teste1 && this.deputadoFederal) {
-    for(let i=0; i < this.federal; i++) {
-       this.deputadoFederal = true
-      console.log("verdadeiro" + this.deputadoFederal)
- }
-  this.deputadoFederal = false
-  console.log("fora" + this.deputadoFederal)
-}
-// return this.teste2()
-}
+//   teste(){ // trava
+//   if (this.teste1 && this.deputadoFederal) {
+//     for(let i=0; i < this.federal; i++) {
+//        this.deputadoFederal = true
+//       console.log("verdadeiro" + this.deputadoFederal)
+//  }
+//   this.deputadoFederal = false
+//   console.log("fora" + this.deputadoFederal)
+// }
+// // return this.teste2()
+// }
 
 listaNumeros(n: string){
   let audio = new Audio();
