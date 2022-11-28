@@ -81,9 +81,10 @@ hr {
 }
 
 .imagens{
-    width: 200px;
+    width: 208px;
     height: 200px;
     float: right;
+    border-radius: 5px;
 }
 
 .numeros{

@@ -12,15 +12,11 @@ export class PainelComponent implements OnInit {
 
  urna!: Urna[]
 
-  nomeCand: string = '';
-  nomePart: string = '';
-
-  teste1:  boolean = true;
   cargoDeputadoFederal: boolean = false;
   cargoDeputadoEstadual: boolean = true;
   cargoSenador: boolean = false;
+  cargoGovernador: boolean = false;
   cargoPresidente: boolean = false;
-  federal = 5;
   elNumero: string = '';
   numero: string[] = [];
   fim: boolean = false;
@@ -28,12 +24,7 @@ export class PainelComponent implements OnInit {
 
   validaNumero: boolean = false;
   votoNulo: boolean = false;
-
-
   foto: boolean = false;
-
-
-  etapaAtual = 0;
 
   gravarNumero!: string[];
 
@@ -60,7 +51,6 @@ export class PainelComponent implements OnInit {
 
   validaArray() {
     console.log("valida" + this.numero)
-    // let i = this.numero.length;
        this.urna.forEach((urnaCandidato) => {
         let i = this.numero.length;
         if (i != urnaCandidato.numeroCandidato.length)
@@ -80,18 +70,6 @@ export class PainelComponent implements OnInit {
        }
     })
   }
-
-//   teste(){ // trava
-//   if (this.teste1 && this.deputadoFederal) {
-//     for(let i=0; i < this.federal; i++) {
-//        this.deputadoFederal = true
-//       console.log("verdadeiro" + this.deputadoFederal)
-//  }
-//   this.deputadoFederal = false
-//   console.log("fora" + this.deputadoFederal)
-// }
-// // return this.teste2()
-// }
 
 listaNumeros(n: string){
   let audio = new Audio();
@@ -144,6 +122,16 @@ listaNumeros(n: string){
         this.numero = numeroVazio
         this.travaInfo = true
         this.cargoSenador = false;
+        this.cargoGovernador = true;
+        audio.src = "../../../assets/som/confirmar.mp3";
+        audio.load();
+        audio.play();
+        break;
+
+    case this.cargoGovernador:
+        this.numero = numeroVazio
+        this.travaInfo = true
+        this.cargoGovernador = false;
         this.cargoPresidente = true;
         audio.src = "../../../assets/som/confirmar.mp3";
         audio.load();
@@ -194,21 +182,31 @@ corrige(){
         this.numero = numeroVazio
         this.travaInfo = true
         this.cargoSenador = false;
+        this.cargoGovernador = true;
+        audio.src = "../../../assets/som/confirmar.mp3";
+        audio.load();
+        audio.play();
+        break;
+
+    case this.cargoGovernador:
+        this.numero = numeroVazio
+        this.travaInfo = true
+        this.cargoGovernador = false;
         this.cargoPresidente = true;
         audio.src = "../../../assets/som/confirmar.mp3";
         audio.load();
         audio.play();
         break;
 
-    case this.cargoPresidente:
-      this.numero = numeroVazio
-      this.travaInfo = true
-      this.cargoPresidente = false;
-      this.fim = true
-      audio.src = "../../../assets/som/confirmar.mp3";
-      audio.load();
-      audio.play();
-      break;
+      case this.cargoPresidente:
+        this.numero = numeroVazio
+        this.travaInfo = true
+        this.cargoPresidente = false;
+        this.fim = true
+        audio.src = "../../../assets/som/confirmar.mp3";
+        audio.load();
+        audio.play();
+        break;
      }
    }
    }

@@ -7,11 +7,15 @@
         <span *ngIf="cargoDeputadoFederal">Deputado Federal</span>
         <span *ngIf="cargoDeputadoEstadual">Deputado Estadual</span>
         <span *ngIf="cargoSenador">Senador</span>
+        <span *ngIf="cargoGovernador">Governador</span>
         <span *ngIf="cargoPresidente">Presidente</span>
       </div>
 
       <div>
         <div *ngIf="validaNumero && !travaInfo && cargoPresidente && numero.length > 1">
+          <div><img class="imagens" src="{{ imagem }}" /></div>
+        </div>
+        <div *ngIf="validaNumero && !travaInfo && cargoGovernador && numero.length > 1">
           <div><img class="imagens" src="{{ imagem }}" /></div>
         </div>
         <div *ngIf="validaNumero && !travaInfo && cargoSenador && numero.length > 2">
@@ -27,6 +31,15 @@
         </div>
 
         <div *ngIf="cargoPresidente" class="numeros">
+          <span class="input pisca"></span>
+          <span class="input pisca"></span>
+          <div *ngIf="votoNulo && !validaNumero  && numero.length > 1">
+            <p class="numeroErrado">NÚMERO ERRADO</p>
+            <p class="votoNulo">VOTO EM NULO</p>
+          </div>
+        </div>
+
+        <div *ngIf="cargoGovernador" class="numeros">
           <span class="input pisca"></span>
           <span class="input pisca"></span>
           <div *ngIf="votoNulo && !validaNumero  && numero.length > 1">
@@ -70,6 +83,11 @@
 
       </div>
       <div *ngIf="validaNumero && !travaInfo && cargoPresidente && numero.length > 1" class="partido">
+        <p>{{ "Nome: " + this.nomeCandidato }}</p>
+        <p>{{ "Partido: " + this.partidoCandidato }}</p>
+      </div>
+
+      <div *ngIf="validaNumero && !travaInfo && cargoGovernador && numero.length > 1" class="partido">
         <p>{{ "Nome: " + this.nomeCandidato }}</p>
         <p>{{ "Partido: " + this.partidoCandidato }}</p>
       </div>

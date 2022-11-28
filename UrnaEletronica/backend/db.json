@@ -34,11 +34,11 @@
       },
       {
         "id": 5,
-        "cargo": "Senador",
+        "cargo": "Governador",
         "partido": "Casa Lannister",
         "nomeCandidato": "Tywin Lannister",
         "foto": "../../../assets/img/tywin.png",
-        "numeroCandidato": ["4", "3", "2"]
+        "numeroCandidato": ["4", "2"]
       },
       {
         "id": 6,
@@ -68,7 +68,7 @@
         "id": 9,
         "cargo": "Deputado Estadual",
         "partido": "Casa Stark",
-        "nomeCandidato": "jon Snow",
+        "nomeCandidato": "Jon Snow",
         "foto": "../../../assets/img/jon.png",
         "numeroCandidato":["5", "4", "3", "2", "1"]
       },
@@ -114,11 +114,11 @@
       },
       {
         "id": 15,
-        "cargo": "Deputado Federal",
+        "cargo": "Governador",
         "partido": "Casa Lannister",
         "nomeCandidato": "Jaime Lannister",
         "foto": "../../../assets/img/jaime.png",
-        "numeroCandidato":["5", "4", "3", "4"]
+        "numeroCandidato":["5", "7"]
       },
       {
         "id": 16,
@@ -130,11 +130,11 @@
       },
       {
         "id": 17,
-        "cargo": "Deputado Federal",
+        "cargo": "Governador",
         "partido": "Casa Tyrell",
         "nomeCandidato": "Olenna Tyrell",
         "foto": "../../../assets/img/olennaTyrell.png",
-        "numeroCandidato":["3", "2", "1", "3"]
+        "numeroCandidato":["3", "3"]
       },
       {
         "id": 18,
