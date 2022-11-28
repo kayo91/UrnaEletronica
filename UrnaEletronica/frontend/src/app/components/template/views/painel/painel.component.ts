@@ -16,14 +16,15 @@ export class PainelComponent implements OnInit {
   nomePart: string = '';
 
   teste1:  boolean = true;
-  deputadoFederal: boolean = true;
-  cargoDeputadoFederal: boolean = true;
-  cargoDeputadoEstadual: boolean = false;
+  cargoDeputadoFederal: boolean = false;
+  cargoDeputadoEstadual: boolean = true;
   cargoSenador: boolean = false;
   cargoPresidente: boolean = false;
   federal = 5;
   elNumero: string = '';
   numero: string[] = [];
+  fim: boolean = false;
+  travaInfo: boolean = false;
 
   validaNumero: boolean = false;
   votoNulo: boolean = false;
@@ -70,6 +71,7 @@ export class PainelComponent implements OnInit {
             return false;
         }
         this.validaNumero = true
+        this.travaInfo = false
         this.gravarNumero = urnaCandidato.numeroCandidato
         this.nomeCandidato = urnaCandidato.nomeCandidato
         this.partidoCandidato = urnaCandidato.partido
@@ -116,6 +118,48 @@ listaNumeros(n: string){
  }
 
  branco(){
+  let audio = new Audio();
+  let numeroVazio: string[] = []
+  switch (!this.validaNumero) {
+    case this.cargoDeputadoEstadual:
+      this.numero = numeroVazio
+      this.travaInfo = true
+      this.cargoDeputadoEstadual = false;
+      this.cargoDeputadoFederal = true;
+      audio.src = "../../../assets/som/confirmar.mp3";
+      audio.load();
+      audio.play();
+      break;
+    case this.cargoDeputadoFederal:
+      this.numero = numeroVazio
+      this.travaInfo = true
+      this.cargoDeputadoFederal = false;
+      this.cargoSenador = true;
+      audio.src = "../../../assets/som/confirmar.mp3";
+      audio.load();
+      audio.play();
+      break;
+
+    case this.cargoSenador:
+        this.numero = numeroVazio
+        this.travaInfo = true
+        this.cargoSenador = false;
+        this.cargoPresidente = true;
+        audio.src = "../../../assets/som/confirmar.mp3";
+        audio.load();
+        audio.play();
+        break;
+
+    case this.cargoPresidente:
+      this.numero = numeroVazio
+      this.travaInfo = true
+      this.cargoPresidente = false;
+      this.fim = true
+      audio.src = "../../../assets/som/confirmar.mp3";
+      audio.load();
+      audio.play();
+      break;
+     }
 }
 
 corrige(){
@@ -125,10 +169,48 @@ corrige(){
  confirma(){
    if(this.validaNumero){
     let audio = new Audio();
-    audio.src = "../../../assets/som/confirmar.mp3";
-    audio.load();
-    audio.play();
-   }
+    let numeroVazio: string[] = []
+   switch (this.validaNumero) {
+    case this.cargoDeputadoEstadual:
+      this.numero = numeroVazio
+      this.travaInfo = true
+      this.cargoDeputadoEstadual = false;
+      this.cargoDeputadoFederal = true;
+      audio.src = "../../../assets/som/confirmar.mp3";
+      audio.load();
+      audio.play();
+      break;
+    case this.cargoDeputadoFederal:
+      this.numero = numeroVazio
+      this.travaInfo = true
+      this.cargoDeputadoFederal = false;
+      this.cargoSenador = true;
+      audio.src = "../../../assets/som/confirmar.mp3";
+      audio.load();
+      audio.play();
+      break;
 
+    case this.cargoSenador:
+        this.numero = numeroVazio
+        this.travaInfo = true
+        this.cargoSenador = false;
+        this.cargoPresidente = true;
+        audio.src = "../../../assets/som/confirmar.mp3";
+        audio.load();
+        audio.play();
+        break;
+
+    case this.cargoPresidente:
+      this.numero = numeroVazio
+      this.travaInfo = true
+      this.cargoPresidente = false;
+      this.fim = true
+      audio.src = "../../../assets/som/confirmar.mp3";
+      audio.load();
+      audio.play();
+      break;
+     }
+   }
+   }
   }
-}
+

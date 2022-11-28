@@ -1,81 +1,132 @@
 <div class="row">
-<div class="painel">
-<div class="contanier">
-  <div id="cabecalho">
-    SEU VOTO PARA
-  </div>
+  <div *ngIf="!fim" class="painel">
+    <div class="contanier">
+      <div id="cabecalho">SEU VOTO PARA</div>
 
-  <div id="cargo">
-    <span *ngIf="true">Deputado Federal</span>
-    <span *ngIf="false">Deputado Estadual</span>
-    <span *ngIf="false">Senador</span>
-    <span *ngIf="false">Presidente</span>
-  </div>
+      <div id="cargo">
+        <span *ngIf="cargoDeputadoFederal">Deputado Federal</span>
+        <span *ngIf="cargoDeputadoEstadual">Deputado Estadual</span>
+        <span *ngIf="cargoSenador">Senador</span>
+        <span *ngIf="cargoPresidente">Presidente</span>
+      </div>
 
-  <div>
+      <div>
+        <div *ngIf="validaNumero && !travaInfo && cargoPresidente && numero.length > 1">
+          <div><img class="imagens" src="{{ imagem }}" /></div>
+        </div>
+        <div *ngIf="validaNumero && !travaInfo && cargoSenador && numero.length > 2">
+          <div><img class="imagens" src="{{ imagem }}" /></div>
+        </div>
 
-  <div *ngIf="validaNumero">
-  <div><img class="imagens" src="{{imagem}}"></div>
-  </div>
-  <div *ngIf="deputadoFederal" class="numeros">
-      <span class="input pisca"></span>
-      <span class="input pisca"></span>
-      <span class="input pisca"></span>
-      <span class="input pisca"></span>
-  </div>
-</div>
-<div *ngIf="votoNulo && !validaNumero">
-  <p>NÚMERO ERRADO</p>
-  <p>VOTO EM NULO</p>
-</div>
-<div *ngIf="validaNumero" class="partido">
-  <p>{{'Nome: ' + this.nomeCandidato}}</p>
-  <p>{{'Partido: ' + this.partidoCandidato}}</p>
-</div>
+        <div *ngIf="validaNumero && !travaInfo && cargoDeputadoEstadual && numero.length > 4">
+          <div><img class="imagens" src="{{ imagem }}" /></div>
+        </div>
 
-</div>
+        <div *ngIf="validaNumero && !travaInfo && cargoDeputadoFederal && numero.length > 3">
+          <div><img class="imagens" src="{{ imagem }}" /></div>
+        </div>
 
-<div class="rodape" *ngIf="validaNumero || votoNulo">
-  <hr>
-  <p class="rodape2">Aperte a tecla:</p>
-  <p class="rodape2">CONFIRMA para CONFIRMAR este voto</p>
-  <p class="rodape2">CORRIGE para REINICIAR este voto</p>
-</div>
-</div>
+        <div *ngIf="cargoPresidente" class="numeros">
+          <span class="input pisca"></span>
+          <span class="input pisca"></span>
+          <div *ngIf="votoNulo && !validaNumero  && numero.length > 1">
+            <p class="numeroErrado">NÚMERO ERRADO</p>
+            <p class="votoNulo">VOTO EM NULO</p>
+          </div>
+        </div>
 
-<div class="botoes">
-  <div class="imagem"><img src="../../../assets/img/eleitoral.png" alt="logo"></div>
-  <div class="listaBotoes">
-    <div class="botao0">
-      <button (click)="listaNumeros('1')" mat-raised-button class="botaoNumerico" color="primary">1</button>
-      <button (click)="listaNumeros('2')" mat-raised-button class="botaoNumerico" color="primary">2</button>
-      <button (click)="listaNumeros('3')" mat-raised-button class="botaoNumerico" color="primary">3</button>
+        <div *ngIf="cargoSenador" class="numeros">
+          <span class="input pisca"></span>
+          <span class="input pisca"></span>
+          <span class="input pisca"></span>
+          <div *ngIf="votoNulo && !validaNumero  && numero.length > 2">
+            <p class="numeroErrado">NÚMERO ERRADO</p>
+            <p class="votoNulo">VOTO EM NULO</p>
+          </div>
+        </div>
+
+        <div *ngIf="cargoDeputadoEstadual" class="numeros">
+          <span class="input pisca"></span>
+          <span class="input pisca"></span>
+          <span class="input pisca"></span>
+          <span class="input pisca"></span>
+          <span class="input pisca"></span>
+          <div *ngIf="votoNulo && !validaNumero  && numero.length > 4">
+            <p class="numeroErrado">NÚMERO ERRADO</p>
+            <p class="votoNulo">VOTO EM NULO</p>
+          </div>
+        </div>
+
+        <div *ngIf="cargoDeputadoFederal" class="numeros">
+          <span class="input pisca"></span>
+          <span class="input pisca"></span>
+          <span class="input pisca"></span>
+          <span class="input pisca"></span>
+          <div *ngIf="votoNulo && !validaNumero && numero.length > 3" class="dvotoNulo">
+            <p class="numeroErrado">NÚMERO ERRADO</p>
+            <p class="votoNulo">VOTO EM NULO</p>
+          </div>
+        </div>
+
+      </div>
+      <div *ngIf="validaNumero && !travaInfo && cargoPresidente && numero.length > 1" class="partido">
+        <p>{{ "Nome: " + this.nomeCandidato }}</p>
+        <p>{{ "Partido: " + this.partidoCandidato }}</p>
+      </div>
+
+      <div *ngIf="validaNumero && !travaInfo && cargoSenador && numero.length > 2" class="partido">
+        <p>{{ "Nome: " + this.nomeCandidato }}</p>
+        <p>{{ "Partido: " + this.partidoCandidato }}</p>
+      </div>
+
+      <div *ngIf="validaNumero && !travaInfo && cargoDeputadoEstadual && numero.length > 4" class="partido">
+        <p>{{ "Nome: " + this.nomeCandidato }}</p>
+        <p>{{ "Partido: " + this.partidoCandidato }}</p>
+      </div>
+
+      <div *ngIf="validaNumero && !travaInfo && cargoDeputadoFederal && numero.length > 3" class="partido">
+        <p>{{ "Nome: " + this.nomeCandidato }}</p>
+        <p>{{ "Partido: " + this.partidoCandidato }}</p>
+      </div>
     </div>
-    <div class="botao0">
-      <button (click)="listaNumeros('4')" mat-raised-button class="botaoNumerico" color="primary">4</button>
-      <button (click)="listaNumeros('5')" mat-raised-button class="botaoNumerico" color="primary">5</button>
-      <button (click)="listaNumeros('6')" mat-raised-button class="botaoNumerico" color="primary">6</button>
-    </div>
-    <div class="botao0">
-      <button (click)="listaNumeros('7')" mat-raised-button class="botaoNumerico" color="primary">7</button>
-      <button (click)="listaNumeros('8')" mat-raised-button class="botaoNumerico" color="primary">8</button>
-      <button (click)="listaNumeros('9')" mat-raised-button class="botaoNumerico" color="primary">9</button>
-    </div>
-    <div class="botao0">
-      <button (click)="listaNumeros('0')" mat-raised-button class="botaoNumerico" color="primary">0</button>
-    </div>
 
-    <div class="botao2">
-      <button (click)="branco()" mat-raised-button class="botao3" style="background-color: white;">BRANCO</button>
-      <button (click)="corrige()" mat-raised-button class="botao3" style="background-color: orange;">CORRIGE</button>
-      <button (click)="confirma()" mat-raised-button class="botao3" style="height: 73px; background-color: green;">CONFIRMA
-      </button>
+    <div class="rodape" *ngIf="validaNumero || votoNulo">
+      <hr />
+      <p class="rodape2">Aperte a tecla:</p>
+      <p class="rodape2">CONFIRMA para CONFIRMAR este voto</p>
+      <p class="rodape2">CORRIGE para REINICIAR este voto</p>
     </div>
   </div>
+  <div *ngIf="fim" class="fim"><p style="text-align: center; font-size: 150px; margin-top: 14rem;">FIM</p></div>
+  <div class="botoes">
+    <div class="imagem">
+      <img src="../../../assets/img/eleitoral.png" alt="logo" />
+    </div>
+    <div class="listaBotoes">
+      <div class="botao0">
+        <button (click)="listaNumeros('1')" mat-raised-button class="botaoNumerico" color="primary">1</button>
+        <button (click)="listaNumeros('2')" mat-raised-button class="botaoNumerico" color="primary">2</button>
+        <button (click)="listaNumeros('3')" mat-raised-button class="botaoNumerico" color="primary">3</button>
+      </div>
+      <div class="botao0">
+        <button (click)="listaNumeros('4')" mat-raised-button class="botaoNumerico" color="primary">4</button>
+        <button (click)="listaNumeros('5')" mat-raised-button class="botaoNumerico" color="primary">5</button>
+        <button (click)="listaNumeros('6')" mat-raised-button class="botaoNumerico" color="primary">6</button>
+      </div>
+      <div class="botao0">
+        <button (click)="listaNumeros('7')" mat-raised-button class="botaoNumerico" color="primary">7</button>
+        <button (click)="listaNumeros('8')" mat-raised-button class="botaoNumerico" color="primary">8</button>
+        <button (click)="listaNumeros('9')" mat-raised-button class="botaoNumerico" color="primary">9</button>
+      </div>
+      <div class="botao0">
+        <button (click)="listaNumeros('0')" mat-raised-button class="botaoNumerico" color="primary">0</button>
+      </div>
 
+      <div class="botao2">
+        <button (click)="branco()" mat-raised-button class="botao3" style="background-color: white">BRANCO</button>
+        <button (click)="corrige()" mat-raised-button class="botao3" style="background-color: orange">CORRIGE</button>
+        <button (click)="confirma()" mat-raised-button class="botao3" style="height: 73px; background-color: green">CONFIRMA</button>
+      </div>
+    </div>
+  </div>
 </div>
-
-</div>
-
-
-

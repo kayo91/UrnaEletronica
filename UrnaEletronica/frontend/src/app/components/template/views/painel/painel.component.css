@@ -26,6 +26,16 @@
   /* background-color: #fff; */
 }
 
+.fim {
+  width: 56%;
+  height: 516px;
+  border: 2px solid rgb(139, 139, 137);
+  margin-left: 2rem;
+  background-color: #fff;
+  margin-top: 2rem;
+  font-size: 10px;
+}
+
 
 #cabecalho {
   margin-top: 1rem;
@@ -133,20 +143,20 @@ hr {
   animation-iteration-count: infinite;
 }
 
-/* .numero {
-  display: inline-block;
-  width: 30px;
-  height: 40px;
-  border: 1px solid #000;
-  text-align: center;
-  line-height: 40px;
-  font-size: 25px;
-  margin-right: 3px;
-} */
+.dvotoNulo {
+ margin-top: 1rem;
+}
 
+.numeroErrado {
+  font-size: 20px;
+  margin-top: 1rem;
+}
 
-
-
+.votoNulo{
+  font-size: 38px;
+  margin-top: 3rem;
+  margin-left: 6rem;
+}
 
 /* arrumar */
 
