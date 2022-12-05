@@ -17,6 +17,12 @@ import { registerLocaleData } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import localePt from '@angular/common/locales/pt';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatListModule} from '@angular/material/list';
+import { GuiaComponent } from './components/template/views/guia/guia.component';
+import { CandidatosComponent } from './components/template/views/candidatos/candidatos.component';
+import { MatTableModule } from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+
 
 
 
@@ -29,6 +35,8 @@ registerLocaleData(localePt);
     FooterComponent,
     UrnaComponent,
     PainelComponent,
+    GuiaComponent,
+    CandidatosComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +48,10 @@ registerLocaleData(localePt);
     MatInputModule,
     MatFormFieldModule,
     HttpClientModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatListModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
   providers: [{
     provide: LOCALE_ID,

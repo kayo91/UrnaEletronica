@@ -33,7 +33,7 @@
         <div *ngIf="cargoPresidente" class="numeros">
           <span class="input pisca"></span>
           <span class="input pisca"></span>
-          <div *ngIf="votoNulo && !validaNumero  && numero.length > 1">
+          <div *ngIf="votoNulo && !validaNumero  && numero.length > 1" class="dvotoNulo">
             <p class="numeroErrado">NÚMERO ERRADO</p>
             <p class="votoNulo">VOTO EM NULO</p>
           </div>
@@ -42,7 +42,7 @@
         <div *ngIf="cargoGovernador" class="numeros">
           <span class="input pisca"></span>
           <span class="input pisca"></span>
-          <div *ngIf="votoNulo && !validaNumero  && numero.length > 1">
+          <div *ngIf="votoNulo && !validaNumero  && numero.length > 1" class="dvotoNulo">
             <p class="numeroErrado">NÚMERO ERRADO</p>
             <p class="votoNulo">VOTO EM NULO</p>
           </div>
@@ -52,19 +52,7 @@
           <span class="input pisca"></span>
           <span class="input pisca"></span>
           <span class="input pisca"></span>
-          <div *ngIf="votoNulo && !validaNumero  && numero.length > 2">
-            <p class="numeroErrado">NÚMERO ERRADO</p>
-            <p class="votoNulo">VOTO EM NULO</p>
-          </div>
-        </div>
-
-        <div *ngIf="cargoDeputadoEstadual" class="numeros">
-          <span class="input pisca"></span>
-          <span class="input pisca"></span>
-          <span class="input pisca"></span>
-          <span class="input pisca"></span>
-          <span class="input pisca"></span>
-          <div *ngIf="votoNulo && !validaNumero  && numero.length > 4">
+          <div *ngIf="votoNulo && !validaNumero  && numero.length > 2" class="dvotoNulo">
             <p class="numeroErrado">NÚMERO ERRADO</p>
             <p class="votoNulo">VOTO EM NULO</p>
           </div>
@@ -76,6 +64,18 @@
           <span class="input pisca"></span>
           <span class="input pisca"></span>
           <div *ngIf="votoNulo && !validaNumero && numero.length > 3" class="dvotoNulo">
+            <p class="numeroErrado">NÚMERO ERRADO</p>
+            <p class="votoNulo">VOTO EM NULO</p>
+          </div>
+        </div>
+
+        <div *ngIf="cargoDeputadoEstadual" class="numeros">
+          <span class="input pisca"></span>
+          <span class="input pisca"></span>
+          <span class="input pisca"></span>
+          <span class="input pisca"></span>
+          <span class="input pisca"></span>
+          <div *ngIf="votoNulo && !validaNumero  && numero.length > 4" class="dvotoNulo">
             <p class="numeroErrado">NÚMERO ERRADO</p>
             <p class="votoNulo">VOTO EM NULO</p>
           </div>
