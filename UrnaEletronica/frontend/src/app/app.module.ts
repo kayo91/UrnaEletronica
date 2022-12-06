@@ -1,3 +1,4 @@
+import { MatPaginatorIntlPtBr } from './_util/paginator-ptbr-i8n';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -21,7 +22,8 @@ import {MatListModule} from '@angular/material/list';
 import { GuiaComponent } from './components/template/views/guia/guia.component';
 import { CandidatosComponent } from './components/template/views/candidatos/candidatos.component';
 import { MatTableModule } from '@angular/material/table';
-import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatPaginatorModule, MatPaginatorIntl } from '@angular/material/paginator';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 
@@ -51,11 +53,13 @@ registerLocaleData(localePt);
     MatSnackBarModule,
     MatListModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatProgressSpinnerModule
   ],
   providers: [{
-    provide: LOCALE_ID,
-    useValue: 'pt-BR'
+    // provide: LOCALE_ID,
+    // useValue: 'pt-BR',
+    provide: MatPaginatorIntl, useClass: MatPaginatorIntlPtBr
   }],
   bootstrap: [AppComponent]
 })
