@@ -13,6 +13,7 @@ import {MatTableDataSource} from '@angular/material/table';
 export class CandidatosComponent implements OnInit {
 
   urna!: Urna[]
+  numero: string[] = [];
 
   displayedColumns = ['id', 'nomeCandidato', 'partido', 'cargo', 'numeroCandidato']
 
@@ -24,6 +25,10 @@ export class CandidatosComponent implements OnInit {
   ngOnInit(): void {
     this.painelService.ler().subscribe(urna => {
       this.urna = urna
+      this.urna.forEach((urnaCandidato) => {
+        urnaCandidato.numeroCandidato.reverse()
+        })
   })
 }
 }
+
