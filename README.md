@@ -6,6 +6,8 @@
 
 - Foi desenvolvimento para resolução 1280x800.
 
+- Os candidatos são personagens da serie de tv da hbo Game of Thrones
+
 - Para rodar tem que usar os comando npm install e npm start tanto na pasta de frontend quando no backend.
 
 # Telas do Projeto
