@@ -1,6 +1,8 @@
 # Urna eletrônica
 
-- Projeto desenvolvido em Angular para fins didáticos.
+- Projeto pessoal desenvolvido em Angular para fins didáticos.
+
+- O frontend foi desenvolvido em Angular, consumindo dados de uma API desenvolvida em Node.
 
 - O projeto está em fase de desenvolvimento.
 
