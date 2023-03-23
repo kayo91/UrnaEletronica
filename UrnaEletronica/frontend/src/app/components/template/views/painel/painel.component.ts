@@ -55,7 +55,7 @@ export class PainelComponent implements OnInit {
         let i = this.numero.length;
         if (i != urnaCandidato.numeroCandidato.length)
         return false; { // retorna quando o array digitado  é falso
-          this.votoNulo = true
+          //this.votoNulo = true
           console.log("Meu votonulo: " + this.votoNulo )
         while (i--) {
           if(this.numero[i] !== urnaCandidato.numeroCandidato[i])
@@ -98,119 +98,53 @@ listaNumeros(n: string){
  }
 
  branco(){
-  // let audio = new Audio();
-  // let numeroVazio: string[] = []
-  // switch (!this.validaNumero) {
-  //   case this.cargoDeputadoEstadual:
-  //     this.numero = numeroVazio
-  //     this.travaInfo = true
-  //     this.cargoDeputadoEstadual = false;
-  //     this.cargoDeputadoFederal = true;
-  //     audio.src = "../../../assets/som/confirmar.mp3";
-  //     audio.load();
-  //     audio.play();
-  //     break;
-  //   case this.cargoDeputadoFederal:
-  //     this.numero = numeroVazio
-  //     this.travaInfo = true
-  //     this.cargoDeputadoFederal = false;
-  //     this.cargoSenador = true;
-  //     audio.src = "../../../assets/som/confirmar.mp3";
-  //     audio.load();
-  //     audio.play();
-  //     break;
-
-  //   case this.cargoSenador:
-  //       this.numero = numeroVazio
-  //       this.travaInfo = true
-  //       this.cargoSenador = false;
-  //       this.cargoGovernador = true;
-  //       audio.src = "../../../assets/som/confirmar.mp3";
-  //       audio.load();
-  //       audio.play();
-  //       break;
-
-  //   case this.cargoGovernador:
-  //       this.numero = numeroVazio
-  //       this.travaInfo = true
-  //       this.cargoGovernador = false;
-  //       this.cargoPresidente = true;
-  //       audio.src = "../../../assets/som/confirmar.mp3";
-  //       audio.load();
-  //       audio.play();
-  //       break;
-
-  //   case this.cargoPresidente:
-  //     this.numero = numeroVazio
-  //     this.travaInfo = true
-  //     this.cargoPresidente = false;
-  //     this.fim = true
-  //     audio.src = "../../../assets/som/confirmar.mp3";
-  //     audio.load();
-  //     audio.play();
-  //     break;
-  //    }
 }
 
 corrige(){
   location.reload();
 }
 
- confirma(){
-   if(this.validaNumero || !this.validaNumero){
-    let audio = new Audio();
-    let numeroVazio: string[] = []
-   switch (this.validaNumero || !this.validaNumero) { // botão funciona tanto para voto invalido quando para branco
-    case this.cargoDeputadoEstadual:
-      this.numero = numeroVazio
-      this.travaInfo = true
+confirma() {
+  let audio = new Audio();
+  let numeroVazio: string[] = [];
+  this.numero = numeroVazio;
+  this.travaInfo = true;
+
+  switch (true) {
+    case this.validaNumero && this.cargoDeputadoEstadual:
       this.cargoDeputadoEstadual = false;
       this.cargoDeputadoFederal = true;
-      audio.src = "../../../assets/som/confirmar.mp3";
-      audio.load();
-      audio.play();
       break;
-    case this.cargoDeputadoFederal:
-      this.numero = numeroVazio
-      this.travaInfo = true
+
+    case this.validaNumero && this.cargoDeputadoFederal:
       this.cargoDeputadoFederal = false;
       this.cargoSenador = true;
-      audio.src = "../../../assets/som/confirmar.mp3";
-      audio.load();
-      audio.play();
       break;
 
-    case this.cargoSenador:
-        this.numero = numeroVazio
-        this.travaInfo = true
-        this.cargoSenador = false;
-        this.cargoGovernador = true;
-        audio.src = "../../../assets/som/confirmar.mp3";
-        audio.load();
-        audio.play();
-        break;
+    case this.validaNumero && this.cargoSenador:
+      this.cargoSenador = false;
+      this.cargoGovernador = true;
+      break;
 
-    case this.cargoGovernador:
-        this.numero = numeroVazio
-        this.travaInfo = true
-        this.cargoGovernador = false;
-        this.cargoPresidente = true;
-        audio.src = "../../../assets/som/confirmar.mp3";
-        audio.load();
-        audio.play();
-        break;
+    case this.validaNumero && this.cargoGovernador:
+      this.cargoGovernador = false;
+      this.cargoPresidente = true;
+      break;
 
-      case this.cargoPresidente:
-        this.numero = numeroVazio
-        this.travaInfo = true
-        this.cargoPresidente = false;
-        this.fim = true
-        audio.src = "../../../assets/som/confirmar.mp3";
-        audio.load();
-        audio.play();
-        break;
-     }
-   }
-   }
+    case this.validaNumero && this.cargoPresidente:
+      this.cargoPresidente = false;
+      this.fim = true;
+      break;
+
+    default:
+      break;
+  }
+
+  if (this.validaNumero) {
+    audio.src = "../../../assets/som/confirmar.mp3";
+    audio.load();
+    audio.play();
+  }
+}
   }
 
